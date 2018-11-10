@@ -1,0 +1,318 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9CB3A97921843B0F00650519 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3A97821843B0F00650519 /* main.cpp */; };
+		9CC87F8321953AC400F7B857 /* SketchUpAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */; };
+		9CC87F8421953C1100F7B857 /* SketchUpAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */; };
+		9CC87F8721953E2C00F7B857 /* MeshImporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CC87F8521953E2C00F7B857 /* MeshImporter.cpp */; };
+		9CC87F8E2195508300F7B857 /* AssetIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CC87F8C2195508300F7B857 /* AssetIO.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9CB3A97321843B0E00650519 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				9CC87F8421953C1100F7B857 /* SketchUpAPI.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9CB3A97521843B0F00650519 /* sketchup_converter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = sketchup_converter; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CB3A97821843B0F00650519 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SketchUpAPI.framework; path = sketchup_sdk/SketchUpAPI.framework; sourceTree = "<group>"; };
+		9CC87F8521953E2C00F7B857 /* MeshImporter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MeshImporter.cpp; sourceTree = "<group>"; };
+		9CC87F8621953E2C00F7B857 /* MeshImporter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MeshImporter.hpp; sourceTree = "<group>"; };
+		9CC87F8821953E7400F7B857 /* MeshImport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeshImport.h; sourceTree = "<group>"; };
+		9CC87F8C2195508300F7B857 /* AssetIO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetIO.cpp; sourceTree = "<group>"; };
+		9CC87F8D2195508300F7B857 /* AssetIO.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AssetIO.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9CB3A97221843B0E00650519 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC87F8321953AC400F7B857 /* SketchUpAPI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9CB3A96C21843B0E00650519 = {
+			isa = PBXGroup;
+			children = (
+				9CB3A97721843B0F00650519 /* sketchup_converter */,
+				9CB3A97621843B0F00650519 /* Products */,
+				9CB3A97F21843C5900650519 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9CB3A97621843B0F00650519 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9CB3A97521843B0F00650519 /* sketchup_converter */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9CB3A97721843B0F00650519 /* sketchup_converter */ = {
+			isa = PBXGroup;
+			children = (
+				9CC87F8C2195508300F7B857 /* AssetIO.cpp */,
+				9CC87F8D2195508300F7B857 /* AssetIO.hpp */,
+				9CB3A97821843B0F00650519 /* main.cpp */,
+				9CC87F8521953E2C00F7B857 /* MeshImporter.cpp */,
+				9CC87F8621953E2C00F7B857 /* MeshImporter.hpp */,
+				9CC87F8821953E7400F7B857 /* MeshImport.h */,
+			);
+			path = sketchup_converter;
+			sourceTree = "<group>";
+		};
+		9CB3A97F21843C5900650519 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9CB3A97421843B0E00650519 /* sketchup_converter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CB3A97C21843B0F00650519 /* Build configuration list for PBXNativeTarget "sketchup_converter" */;
+			buildPhases = (
+				9CB3A97121843B0E00650519 /* Sources */,
+				9CB3A97221843B0E00650519 /* Frameworks */,
+				9CB3A97321843B0E00650519 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sketchup_converter;
+			productName = sketchup_converter;
+			productReference = 9CB3A97521843B0F00650519 /* sketchup_converter */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9CB3A96D21843B0E00650519 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = trisetra;
+				TargetAttributes = {
+					9CB3A97421843B0E00650519 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9CB3A97021843B0E00650519 /* Build configuration list for PBXProject "sketchup_converter" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9CB3A96C21843B0E00650519;
+			productRefGroup = 9CB3A97621843B0F00650519 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9CB3A97421843B0E00650519 /* sketchup_converter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9CB3A97121843B0E00650519 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC87F8E2195508300F7B857 /* AssetIO.cpp in Sources */,
+				9CC87F8721953E2C00F7B857 /* MeshImporter.cpp in Sources */,
+				9CB3A97921843B0F00650519 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9CB3A97A21843B0F00650519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = ./Eigen/;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9CB3A97B21843B0F00650519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = ./Eigen/;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9CB3A97D21843B0F00650519 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79W8658AM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sketchup_sdk/lib/mac",
+					"$(PROJECT_DIR)/sketchup_sdk",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Debug;
+		};
+		9CB3A97E21843B0F00650519 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M79W8658AM;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/sketchup_sdk/lib/mac",
+					"$(PROJECT_DIR)/sketchup_sdk",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9CB3A97021843B0E00650519 /* Build configuration list for PBXProject "sketchup_converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CB3A97A21843B0F00650519 /* Debug */,
+				9CB3A97B21843B0F00650519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CB3A97C21843B0F00650519 /* Build configuration list for PBXNativeTarget "sketchup_converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CB3A97D21843B0F00650519 /* Debug */,
+				9CB3A97E21843B0F00650519 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9CB3A96D21843B0E00650519 /* Project object */;
+}
