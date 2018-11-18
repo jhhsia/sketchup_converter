@@ -40,6 +40,7 @@
 if ((func) != SU_ERROR_NONE) \
 throw std::exception()
 
+#define Y_UP true
 using namespace trisetra;
 
   class CSUString {
@@ -660,17 +661,18 @@ using namespace trisetra;
     // Get model name
     CSUString name;
     SUModelGetName(model, name);
+    
     std::vector<float> local_transformations(12);
     {
       local_transformations[0] = 1;
       local_transformations[1] = 0;
       local_transformations[2] = 0;
       local_transformations[3] = 0;
-      local_transformations[4] = 0;
-      local_transformations[5] = -1;
+      local_transformations[4] = 1;
+      local_transformations[5] = 0;
       local_transformations[6] = 0;
-      local_transformations[7] = 1;
-      local_transformations[8] = 0;
+      local_transformations[7] = 0;
+      local_transformations[8] = 1;
       local_transformations[9] = 0;
       local_transformations[10] = 0;
       local_transformations[11] = 0;
@@ -740,7 +742,7 @@ int main(int argc, const char * argv[]) {
     size_t lastindex = file_name.find_last_of(".");
     std::string rawname = file_name.substr(0, lastindex);
     rawname = rawname + ".tri";
-    mi.serialize_to_file(rawname, true);
+    mi.serialize_to_file(rawname, true, Y_UP);
   }
   
   return 0;

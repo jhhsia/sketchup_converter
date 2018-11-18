@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9CB3A97921843B0F00650519 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3A97821843B0F00650519 /* main.cpp */; };
-		9CC87F8321953AC400F7B857 /* SketchUpAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */; };
-		9CC87F8421953C1100F7B857 /* SketchUpAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */; };
 		9CC87F8721953E2C00F7B857 /* MeshImporter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CC87F8521953E2C00F7B857 /* MeshImporter.cpp */; };
 		9CC87F8E2195508300F7B857 /* AssetIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CC87F8C2195508300F7B857 /* AssetIO.cpp */; };
+		EA17BEFA2197A38F003329AF /* SketchUpAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */; };
+		EA17BEFB2197A3A1003329AF /* SketchUpAPI.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9CC87F8221953AC400F7B857 /* SketchUpAPI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -21,7 +21,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				9CC87F8421953C1100F7B857 /* SketchUpAPI.framework in CopyFiles */,
+				EA17BEFB2197A3A1003329AF /* SketchUpAPI.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC87F8321953AC400F7B857 /* SketchUpAPI.framework in Frameworks */,
+				EA17BEFA2197A38F003329AF /* SketchUpAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

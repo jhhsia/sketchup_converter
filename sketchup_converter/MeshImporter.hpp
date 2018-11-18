@@ -48,7 +48,7 @@ public:
   void add_mdl_path(const std::string& mdl_path) override;
   void add_texture_path(std::unordered_set<std::string>&&) override;
   
-  void serialize_to_file(const std::string& file_path, bool flattern);
+  void serialize_to_file(const std::string& file_path, bool flattern, bool y_up);
   
 protected:
   std::vector<std::shared_ptr<MeshSource>> _mesh_sources;
