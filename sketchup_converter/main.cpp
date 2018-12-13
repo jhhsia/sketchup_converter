@@ -40,7 +40,7 @@
 if ((func) != SU_ERROR_NONE) \
 throw std::exception()
 
-#define Y_UP true
+#define Y_UP false
 using namespace trisetra;
 
   class CSUString {
@@ -736,13 +736,17 @@ int main(int argc, const char * argv[]) {
   // insert code here...
   MeshImporter mi;
   if( argc > 1){
+    float rotate = 0.0f;
     std::string file_name = std::string(argv[1]);
+    if(argc > 2)
+      rotate = std::stof( std::string(argv[2]));
     load_skp(file_name, &mi );
     
     size_t lastindex = file_name.find_last_of(".");
     std::string rawname = file_name.substr(0, lastindex);
     rawname = rawname + ".tri";
-    mi.serialize_to_file(rawname, true, Y_UP);
+    //mi.serialize_to_file(rawname, true, Y_UP, -1.571f);
+    mi.serialize_to_file(rawname, true, Y_UP, rotate);
   }
   
   return 0;

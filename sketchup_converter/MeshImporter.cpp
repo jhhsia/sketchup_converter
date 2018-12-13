@@ -5,7 +5,7 @@
 //  Created by jahsia on 11/8/18.
 //  Copyright © 2018 trisetra. All rights reserved.
 //
-
+#include <Eigen/Dense>
 #include "MeshImporter.hpp"
 #include <fstream>
 #include <iostream>
@@ -102,12 +102,17 @@
     _textures = std::move(texts);
   }
 
-  void MeshImporter::serialize_to_file(const std::string& file_path, bool flattern, bool y_up){
+  void MeshImporter::serialize_to_file(const std::string& file_path, bool flattern, bool y_up, float rotatate_z){
     
     std::vector<Eigen::Vector3f> pos;
     std::vector<Eigen::Vector3f> normal;
     std::vector<float> uv;
     std::vector<uint32_t> indecies;
+    
+    Eigen::Matrix3f rot3f;
+    rot3f = Eigen::AngleAxisf(0, Eigen::Vector3f::UnitX()) *
+    Eigen::AngleAxisf(0, Eigen::Vector3f::UnitY()) *
+    Eigen::AngleAxisf(rotatate_z, Eigen::Vector3f::UnitZ());
     
     for(auto& node : _nodes){
       Eigen::Matrix4f temp = node->matrix.transpose();
@@ -129,15 +134,18 @@
           std::vector< Eigen::Vector3f> norm_temp(node->mesh->normal.size()/3);
           
           Eigen::Vector4f temp;
-          
+          Eigen::Vector3f ntemp;
           for(size_t i = 0; i < node->mesh->pos.size()/3; ++i){
         
             temp = Eigen::Vector4f::Ones();
             temp.head<3>() = pos_src[i];
             pos_temp[i] = (node->matrix*temp).head<3>();
-            temp.head<3>() = norm_src[i];
-            norm_temp[i] = (node->matrix*temp).head<3>();
             
+            ntemp = norm_src[i];
+            auto mat_3x3 = node->matrix.block<3,3>(0,0);
+            ntemp = mat_3x3*ntemp;
+            ntemp.normalize();
+            norm_temp[i] = ntemp;
           }
           
           int offset = pos.size();
@@ -155,11 +163,21 @@
       }
     }
     
+    Eigen::Vector3f max = Eigen::Vector3f(fmin,fmin,fmin);
+    Eigen::Vector3f min = Eigen::Vector3f(fmax,fmax,fmax);
+    
     if(flattern){
       size_t vert_size = pos.size();
       Eigen::Vector3f mid_point = Eigen::Vector3f::Zero();
-      Eigen::Vector3f max = Eigen::Vector3f(fmin,fmin,fmin);
-      Eigen::Vector3f min = Eigen::Vector3f(fmax,fmax,fmax);
+
+      
+      for( Eigen::Vector3f& a_pos : pos ){
+        a_pos = rot3f*a_pos;
+      }
+      for( Eigen::Vector3f& a_norm : normal ){
+        a_norm = rot3f*a_norm;
+      }
+      
       for( const Eigen::Vector3f& a_pos : pos ){
         mid_point += a_pos;
       }
@@ -185,7 +203,12 @@
       for(  Eigen::Vector3f& a_pos : pos ){
         a_pos = a_pos/length;
       }
+      
+      std::cout<< "max:" << max/length <<std::endl;
+      std::cout<< "min:" << min/length <<std::endl;
     }
+    
+    
 
     std::ofstream outfile;
     outfile.open (file_path, std::ios::out | std::ios::trunc | std::ios::binary);
@@ -221,7 +244,8 @@
     outfile<<"property float y" << std::endl;
     outfile<<"property float z" << std::endl;
     
-    outfile<<"element face " << uint_val <<std::endl;
+    outfile<<"element face " << uint_val/3 <<std::endl;
+    outfile<<"property list uchar int vertex_indices"<<std::endl;
     outfile<<"end_header" << std::endl;
     
     for(size_t i = 0; i < pos.size(); ++i){
